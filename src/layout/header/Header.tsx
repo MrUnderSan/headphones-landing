@@ -4,22 +4,23 @@ import {Container} from "../../components/Container";
 import Logo from "../../components/logo/Logo";
 import {Wrapper} from "../../components/wrapper/Wrapper";
 import {Icon} from "../../components/icon/Icon";
+import {Theme} from "../../styles/Theme";
 
 export const Header = () => {
     return (
-        <StyledHeader>
+        <StyledHeader id={"header"}>
             <Container>
                 <Wrapper justify={"space-between"} align={"center"}>
                     <Logo></Logo>
                     <MainMenu>
                         <MainMenuLink href="">
-                            <Icon iconId={"search"}/>
+                            <Icon width={"18"} height={"18"} viewBox={"0 0 20 20"} iconId={"search"}/>
                         </MainMenuLink>
                         <MainMenuLink href="">
-                            <Icon iconId={"card"}/>
+                            <Icon width={"18"} height={"18"} viewBox={"0 0 20 20"}  iconId={"card"}/>
                         </MainMenuLink>
                         <MainMenuLink href="">
-                            <Icon iconId={"login"}/>
+                            <Icon width={"18"} height={"18"} viewBox={"0 0 20 20"}  iconId={"login"}/>
                         </MainMenuLink>
                     </MainMenu>
                     <Menu>
@@ -47,29 +48,61 @@ const StyledHeader = styled.header `
 
 `
 
-const MainMenu = styled.div `
 
+const MainMenu = styled.div `
+  display: flex;
+  
+  
 `
 
 const MainMenuLink = styled.a `
+  width: 47px;
+  height: 47px;
+  border-radius: 100%;
+  background-color: ${Theme.colors.element};
+  color: ${Theme.colors.accent};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
+  position: relative;
+  
+  & + & {
+    margin-left: 64px;
+    
+    &::before {
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: ${Theme.colors.element};
+      opacity: 0.5;
+      
+      position: absolute;
+      left: -31px;
+    }
+  }
+  
+  
+  
 `
 
 const Menu = styled.div `
   width: 38px;
-  height: 38px;
+  height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  cursor: pointer;
   
   span {
     display: inline-block;
     height: 3px;
     width: 100%;
-    background-color: red;
+    background-color: ${Theme.colors.element};
+    border-radius: 3px;
     &:nth-child(even) {
-      width: 70%;
+      width: 80%;
     }
   }
   
