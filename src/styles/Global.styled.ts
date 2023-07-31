@@ -23,4 +23,9 @@ export const GlobalStyle = createGlobalStyle `
       text-decoration: none;
       color: ${Theme.colors.element}
     }
+    
+    button {
+      font-family: Rubik,sans-serif;
+    }
+
 `
