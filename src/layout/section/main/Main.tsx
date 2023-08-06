@@ -42,6 +42,10 @@ const StyledMain = styled.section `
 
   display: flex;
   align-items: center;
+  
+  ${Container} {
+    margin: 0 auto;
+  }
 
 
 `

@@ -1,15 +1,15 @@
 import React from 'react';
 import {Icon} from "../../components/icon/Icon";
 import {Container} from "../../components/Container";
-import {Wrapper} from "../../components/wrapper/Wrapper";
 import Logo from "../../components/logo/Logo";
 import styled from "styled-components";
+import {Theme} from "../../styles/Theme";
 
 export const Footer = () => {
     return (
         <StyledFooter>
             <Container>
-                <Wrapper justify={"space-between"} align={"center"}>
+                <FooterWrapper>
                     <Logo></Logo>
                     <Menu>
                         <MenuLink href="">
@@ -24,16 +24,25 @@ export const Footer = () => {
                     </Menu>
                     <Social>
                         <SocialLink href="">
-                            <Icon iconId={"instagram"}/>
+                            <Icon iconId={"instagram"}
+                                  height={"21"}
+                                  width={"21"}
+                                  viewBox={"0 0 22 22"}/>
                         </SocialLink>
                         <SocialLink href="">
-                            <Icon iconId={"twitter"}/>
+                            <Icon iconId={"twitter"}
+                                  height={"24"}
+                                  width={"20"}
+                                  viewBox={"0 0 24 18"}/>
                         </SocialLink>
                         <SocialLink href="">
-                            <Icon iconId={"facebook"}/>
+                            <Icon iconId={"facebook"}
+                                  height={"22"}
+                                  width={"13"}
+                                  viewBox={"0 0 15 20"}/>
                         </SocialLink>
                     </Social>
-                </Wrapper>
+                </FooterWrapper>
 
             </Container>
 
@@ -41,33 +50,49 @@ export const Footer = () => {
     );
 };
 
-const StyledFooter = styled.header `
-    padding-top: 35px;
-    background-color: #E86564;
+const StyledFooter = styled.footer `
+  padding: 62px 0;
+  background-color: #E86564;
+  
+  ${Container} {
+    margin: 0 auto;
+  }
 
+`
+
+const FooterWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 `
 
 
 const MenuLink = styled.a `
-
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 140%;
 `
 const SocialLink = styled.a `
-
+  width: 51px;
+  height: 51px;
+  border-radius: 100%;
+  background-color: ${Theme.colors.element};
+  color: ${Theme.colors.accent};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 const Menu = styled.div `
-  width: 38px;
-  height: 38px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
 
   
 `
 const Social = styled.div `
-  width: 38px;
-  height: 38px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 35px;
 
-  
 `

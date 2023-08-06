@@ -1,23 +1,26 @@
 import React from 'react';
 import styled from "styled-components"
 import {Container} from "../../../components/Container";
-import {Wrapper} from "../../../components/wrapper/Wrapper";
 import {Title} from "../../../components/title/Title";
 import {Button} from "../../../components/button/Button";
+import subscribeBgRight from "../../../assets/image/subscribe-bg-right.svg";
+import subscribeBgLeft from "../../../assets/image/subscribe-bg-left.svg"
 
 export const Subscribe = () => {
     return (
         <StyledSubscribe>
             <Container>
-                <Wrapper direction={"column"}>
-                    <Title>Subscribe</Title>
-                    <Subtitle>Lorem ipsum dolor sit amet, consectetur </Subtitle>
-                    <form action="">
-                        <input type="email" placeholder={"Enter Your email address"}/>
-                        <Button type={"submit"}>Subscribe</Button>
+                <SubscribeContainer>
+                    <SubscribeWrapper>
+                        <Title>Subscribe</Title>
+                        <Subtitle>Lorem ipsum dolor sit amet, consectetur </Subtitle>
+                        <Form action="">
+                            <Input type="email" placeholder={"Enter Your email address"}/>
+                            <Button type={"submit"}>Subscribe</Button>
 
-                    </form>
-                </Wrapper>
+                        </Form>
+                    </SubscribeWrapper>
+                </SubscribeContainer>
             </Container>
         </StyledSubscribe>
     );
@@ -25,7 +28,84 @@ export const Subscribe = () => {
 
 const StyledSubscribe = styled.section `
 
+  text-align: center;
+  
+  ${Container} {
+    margin-bottom: 130px;
+  }
+  
 `
-const Subtitle = styled.h4 `
 
+const SubscribeContainer = styled.div`
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+
+  &::before {
+    content: url(${subscribeBgLeft});
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    max-width: 196px;
+    transform: scale(90%);
+  }
+
+  &::after {
+    content: url(${subscribeBgRight});
+    display: inline-block;
+    position: absolute;
+    max-width: 164px;
+    top: 0;
+    right: 0;
+    transform: scale(90%);
+  }
+`
+
+const SubscribeWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 712px;
+  width: 100%;
+  min-height: 292px;
+  border-radius: 20px;
+  background: #FFF4F4;
+
+`
+
+const Subtitle = styled.h4 `
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
+  opacity: 0.7;
+  margin: 6px 0 36px;
+`
+
+const Form = styled.form`
+  position: relative;
+  
+  ${Button} {
+    position: absolute;
+    right: 0;
+  }
+`
+
+const Input = styled.input`
+  width: 503px;
+  height: 61px;
+  padding: 15px 30px;
+  border-radius: 73px;
+  border: none;
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 150%;
+  &::placeholder {
+
+    opacity: 0.3;
+  }
 `

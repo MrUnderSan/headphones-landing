@@ -45,6 +45,10 @@ const StyledHeader = styled.header `
   right: 0;
   z-index: 1;
   height: 100px;
+  
+  ${Container} {
+    margin: 0 auto;
+  }
 
 `
 

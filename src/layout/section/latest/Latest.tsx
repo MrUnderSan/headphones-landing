@@ -13,17 +13,20 @@ const cards = [
         name: "Pink Headphone",
         price: 256,
         rating: 4.50,
-        url: pinkHeadphones
+        url: pinkHeadphones,
+        colour: "#FFE5EE"
     },    {
         name: "Blue Headphone",
         price: 235,
         rating: 4.50,
-        url: blueHeadphones
+        url: blueHeadphones,
+        colour: "#E5F1FF"
     }, {
         name: "Green Headphone",
         price: 245,
         rating: 4.50,
-        url: greenHeadphones
+        url: greenHeadphones,
+        colour: "#E5FFFB"
     }];
 export const Latest = () => {
     return (
@@ -31,7 +34,7 @@ export const Latest = () => {
             <Container>
                 <Title>Our Latest Product</Title>
                 <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis nunc ipsum aliquam, ante.</Description>
-                <Wrapper justify={"center"}>
+                <Wrapper justify={"space-between"}>
                     <Card cards={cards}/>
                 </Wrapper>
             </Container>
@@ -40,8 +43,12 @@ export const Latest = () => {
 };
 
 const StyledLatest = styled.section `
-
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 150%;
 `
 const Description = styled.p `
+    margin: 25px 0 90px;
 
 `

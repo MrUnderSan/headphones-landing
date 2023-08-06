@@ -16,7 +16,7 @@ export const Colour = () => {
     return (
         <StyledColour>
             <Container>
-                <Title>Our Latest colour collection 2021</Title>
+                <Title>Our Latest colour collection 2023</Title>
                 <Carousel imgUrlArray={imgArr}/>
             </Container>
 
@@ -25,5 +25,12 @@ export const Colour = () => {
 };
 
 const  StyledColour = styled.section `
-    
+    text-align: center;
+  
+  ${Title} {
+    max-width: 508px;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 70px;
+  }
 `
