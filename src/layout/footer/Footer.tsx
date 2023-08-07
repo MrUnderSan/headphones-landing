@@ -52,7 +52,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer `
   padding: 62px 0;
-  background-color: #E86564;
+  background-color: ${Theme.colors.bg};
   
   ${Container} {
     margin: 0 auto;
