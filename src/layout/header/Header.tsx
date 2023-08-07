@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {Container} from "../../components/Container";
 import Logo from "../../components/logo/Logo";
@@ -7,8 +7,31 @@ import {Icon} from "../../components/icon/Icon";
 import {Theme} from "../../styles/Theme";
 
 export const Header = () => {
+
+    const [isScrolled, setIsScrolled] = useState(false)
+    const changeBackground = () => {
+        if (window.scrollY >= 24) {
+            setIsScrolled(true)
+        } else {
+            setIsScrolled(false)
+        }
+    }
+
+    useEffect(() => {
+        changeBackground()
+        window.addEventListener("scroll", changeBackground)
+    })
+
+
+
     return (
-        <StyledHeader id={"header"}>
+        <StyledHeader id={"header"}
+                      style={isScrolled
+                             ? {backgroundColor: `${Theme.colors.bg}`,
+                                padding: "10px 0 10px",
+                                height: "86px"}
+                             : {backgroundColor: "rgba(232, 101, 100, 0)"}}
+        >
             <Container>
                 <Wrapper justify={"space-between"} align={"center"}>
                     <Logo></Logo>
@@ -38,13 +61,13 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header `
-  padding-top: 34px;
+  padding: 34px 0 34px;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1;
-  height: 100px;
+  z-index: 9;
+  height: 134px;
   
   ${Container} {
     margin: 0 auto;
