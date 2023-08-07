@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import styled from "styled-components";
 import {Container} from "../../components/Container";
-import Logo from "../../components/logo/Logo";
 import {Wrapper} from "../../components/wrapper/Wrapper";
 import {Icon} from "../../components/icon/Icon";
 import {Theme} from "../../styles/Theme";
+import {Logo} from "../../components/logo/Logo";
 
 export const Header = () => {
 
@@ -28,7 +28,7 @@ export const Header = () => {
         <StyledHeader id={"header"}
                       style={isScrolled
                              ? {backgroundColor: `${Theme.colors.bg}`,
-                                padding: "10px 0 10px",
+                                padding: "10px 0",
                                 height: "86px"}
                              : {backgroundColor: "rgba(232, 101, 100, 0)"}}
         >
@@ -61,7 +61,7 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header `
-  padding: 34px 0 34px;
+  padding: 34px 0 0 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -69,8 +69,13 @@ const StyledHeader = styled.header `
   z-index: 9;
   height: 134px;
   
+  
   ${Container} {
     margin: 0 auto;
+  }
+
+  @media ${Theme.media.mobile} {
+    padding: 10px 0;
   }
 
 `
@@ -79,6 +84,9 @@ const StyledHeader = styled.header `
 const MainMenu = styled.div `
   display: flex;
   
+  @media ${Theme.media.mobile} {
+    display: none;
+  }
   
 `
 

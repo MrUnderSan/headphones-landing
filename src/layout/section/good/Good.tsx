@@ -73,20 +73,37 @@ const GoodWrapper = styled.div`
   grid-template-columns: minmax(460px, 1fr) 1fr;
   grid-template-rows: repeat(auto-fit, auto);
   gap: 60px;
-  
-  @media ${Theme.media.tablet} {
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
-  
+  grid-template-areas: 
+            "a c"
+            "b c";
+
   ${Title} {
     text-align: left;
-    grid-area: 1 / 1 / 2 / 2;
+    grid-area: a;
+  }
+
+  @media ${Theme.media.tablet} {
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    
+  }
+
+  @media ${Theme.media.mobile} {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+            "a"
+            "c"
+            "b";
+    gap: 10px;
+    justify-items: center;
+    ${Title} {
+      text-align: center;
+    }
   }
 `
 
 const SpecificItem = styled.div`
-  grid-area: 2 / 1 / 3 / 2;
+  grid-area: b;
   display: flex;
 `
 const Image = styled.div`
@@ -120,6 +137,9 @@ const Image = styled.div`
 `
 const Info = styled.div`
     margin-left: 50px;
+  @media ${Theme.media.mobile} {
+    margin-left: 20px;
+  }
 `
 const InfoTitle = styled.h3`
   font-size: 31px;
@@ -153,7 +173,11 @@ const GoodImageWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-area: 1 / 2 / 3 / 3;
+  grid-area: c;
+
+  @media ${Theme.media.mobile} {
+    width: 80%;
+  }
 `
 
 const GoodImage = styled.img`

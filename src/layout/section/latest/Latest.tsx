@@ -7,6 +7,7 @@ import {Card} from "../../../components/card/Card";
 import pinkHeadphones from "../../../assets/image/product/pink.png";
 import blueHeadphones from "../../../assets/image/product/blue.png";
 import greenHeadphones from "../../../assets/image/product/green.png"
+import {Theme} from "../../../styles/Theme";
 
 const cards = [
     {
@@ -50,6 +51,12 @@ const StyledLatest = styled.section `
   
   ${Wrapper} {
     gap: 50px;
+  }
+
+  @media ${Theme.media.mobile} {
+    ${Wrapper} {
+      gap: 70px;
+    }
   }
 `
 const Description = styled.p `

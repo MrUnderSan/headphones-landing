@@ -10,5 +10,9 @@ export const Title = styled.h2 `
   @media ${Theme.media.tablet} {
     font-size: 34px;
   }
+
+  @media ${Theme.media.tablet} {
+    font-size: 30px;
+  }
   
 `

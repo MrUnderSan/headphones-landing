@@ -42,6 +42,9 @@ const Slider = styled.div`
   @media ${Theme.media.tablet} {
     height: 323px;
   }
+  @media ${Theme.media.mobile} {
+    height: 223px;
+  }
 `
 
 
@@ -53,6 +56,10 @@ const Slide = styled.div`
   @media ${Theme.media.tablet} {
     width: 223px;
     height: 223px;
+  }
+  @media ${Theme.media.mobile} {
+    width: 163px;
+    height: 163px;
   }
 
   &:nth-child(2) {
@@ -66,6 +73,11 @@ const Slide = styled.div`
     @media ${Theme.media.tablet} {
       width: 323px;
       height: 323px;
+    }
+
+    @media ${Theme.media.mobile} {
+      width: 223px;
+      height: 223px;
     }
   }
 

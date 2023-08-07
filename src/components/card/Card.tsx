@@ -70,10 +70,15 @@ const StyledCard = styled.div`
 
 const ImageWrapper = styled.div`
   width: 332px;
-  height: 331px;
+  height: 332px;
   border-radius: 30px;
 
   position: relative;
+
+  @media ${Theme.media.mobile} {
+    width: 300px;
+    height: 300px;
+  }
 `
 
 
@@ -81,6 +86,10 @@ const Image = styled.img`
   position: absolute;
   bottom: 20px;
   left: 24px;
+
+  @media ${Theme.media.mobile} {
+    width: 76%;
+  }
 `
 const Rating = styled.div`
   display: flex;

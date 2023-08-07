@@ -33,10 +33,17 @@ const  StyledColour = styled.section `
     width: 100%;
     display: inline-block;
     margin-bottom: 70px;
+  }
 
-    @media ${Theme.media.tablet} {
+  @media ${Theme.media.tablet} {
+    ${Title} {
       margin-bottom: 30px;
     }
-    
+  }
+
+  @media ${Theme.media.mobile} {
+    ${Title} {
+      margin-bottom: 10px;
+    }
   }
 `

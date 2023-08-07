@@ -30,16 +30,25 @@ export const Box = () => {
 };
 
 const StyledBox = styled.section `
-  ${Title} {
     margin-top: 70px;
     text-align: left;
     grid-area: a;
-    @media ${Theme.media.tablet} {
+  }
+
+  @media ${Theme.media.tablet} {
+    ${Title} {
       margin-top: 0;
       margin-bottom: 30px;
       text-align: center;
     }
   }
+
+    @media ${Theme.media.mobile} {
+      ${Title} {
+        margin-bottom: 0;
+      }
+    }
+
 `
 const BoxWrapper = styled.div`
   display: grid;
@@ -50,11 +59,20 @@ const BoxWrapper = styled.div`
             "b c";
   
   @media ${Theme.media.tablet} {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(2, auto);
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
             "a a"
             "b c";
+  }
+
+  @media ${Theme.media.mobile} {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+            "a"
+            "b"
+            "c";
+    gap: 10px;
+    justify-items: center;
   }
     
 `
@@ -62,6 +80,9 @@ const BoxWrapper = styled.div`
 const Image = styled.img `
   grid-area: b;
   width: 100%;
+  @media ${Theme.media.mobile} {
+    width: 80%;
+  }
 `
 
 
@@ -76,6 +97,7 @@ const Description = styled.ul `
 
   @media ${Theme.media.tablet} {
     justify-content: center;
+    gap: 10px;
   }
 `
 const Item = styled.li `

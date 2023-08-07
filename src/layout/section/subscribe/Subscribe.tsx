@@ -40,6 +40,12 @@ const StyledSubscribe = styled.section `
       margin-bottom: 100px;
     }
   }
+
+  @media ${Theme.media.mobile} {
+    ${Container} {
+      margin-bottom: 50px;
+    }
+  }
   
 `
 
@@ -97,6 +103,11 @@ const Subtitle = styled.h4 `
   line-height: 150%;
   opacity: 0.7;
   margin: 6px 0 36px;
+
+  @media ${Theme.media.mobile} {
+
+    margin: 6px 0 30px;
+  }
 `
 
 const Form = styled.form`
@@ -106,10 +117,17 @@ const Form = styled.form`
     position: absolute;
     right: 0;
   }
+
+  @media ${Theme.media.mobile} {
+    ${Button} {
+      position: relative;
+      margin-top: 30px;
+    }
+  }
 `
 
 const Input = styled.input`
-  width: 503px;
+  max-width: 503px;
   height: 61px;
   padding: 15px 30px;
   border-radius: 73px;

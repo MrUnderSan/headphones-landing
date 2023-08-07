@@ -1,9 +1,9 @@
 import React from 'react';
 import {Icon} from "../../components/icon/Icon";
 import {Container} from "../../components/Container";
-import Logo from "../../components/logo/Logo";
 import styled from "styled-components";
 import {Theme} from "../../styles/Theme";
+import {Logo} from "../../components/logo/Logo";
 
 export const Footer = () => {
     return (
@@ -62,11 +62,21 @@ const StyledFooter = styled.footer `
     padding: 30px 0;
   }
 
+  @media ${Theme.media.mobile} {
+    padding: 10px 0;
+  }
+
 `
 
 const FooterWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
+  @media ${Theme.media.mobile} {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 20px;
+  }
 `
 
 

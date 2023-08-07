@@ -46,12 +46,22 @@ const StyledMain = styled.section `
   ${Container} {
     margin: 0 auto;
   }
+  
+  @media ${Theme.media.mobile} {
+    padding-top: 100px;
+    ${Wrapper} {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 
 
 `
 const Image = styled.div `
   position: relative;
   z-index: 0;
+  width: 100%;
   &::before {
     content: "";
     display: inline-block;
@@ -66,17 +76,34 @@ const Image = styled.div `
     z-index: -1;
     transform: scale(140%);
   }
+
+  @media ${Theme.media.mobile} {
+    width: 70%;
+  }
+
 `
 const Img = styled.img `
   max-width: 570px;
   width: 100%;
+
 `
 const Info = styled.div `
   margin-left: 95px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  max-width: 500px;;
+  max-width: 500px;
+
+  @media ${Theme.media.tablet} {
+    justify-content: center;
+  }
+
+  @media ${Theme.media.mobile} {
+    margin-left: 0;
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+  }
 `
 
 const SubTitle = styled.h2 `
@@ -100,6 +127,10 @@ const Price = styled.div `
     margin: 45px 0 35px;
   display: flex;
   align-items: center;
+
+  @media ${Theme.media.mobile} {
+    margin: 20px 0;
+  }
 `
 const CurrentPrice = styled.span `
   font-size: 40px;
