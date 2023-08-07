@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
-import {Wrapper} from "../../../components/wrapper/Wrapper";
 import {Title} from "../../../components/title/Title";
 import {Icon} from "../../../components/icon/Icon";
 import photo from "../../../assets/image/feauture-img.png"
@@ -32,7 +31,7 @@ export const Good = () => {
     return (
         <StyledGood>
             <Container>
-                <Wrapper direction={"column"}>
+                <GoodWrapper>
                     <Title>Good headphones and loud music is all you need</Title>
                     <Specific>
 
@@ -56,8 +55,10 @@ export const Good = () => {
                         })}
 
                     </Specific>
-                    <GoodImage src={photo} alt={"yellow headphones"}/>
-                </Wrapper>
+                    <GoodImageWrapper>
+                        <GoodImage src={photo} alt={"yellow headphones"}/>
+                    </GoodImageWrapper>
+                </GoodWrapper>
             </Container>
 
         </StyledGood>
@@ -65,15 +66,27 @@ export const Good = () => {
 };
 
 const StyledGood = styled.section`
-  position: relative;
-
-  ${Title} {
-    max-width: 460px;
-    text-align: left;
-  }
 
 `
+const GoodWrapper = styled.div`
+  display: grid;
+  grid-template-columns: minmax(460px, 1fr) 1fr;
+  grid-template-rows: repeat(auto-fit, auto);
+  gap: 60px;
+  
+  @media ${Theme.media.tablet} {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+  
+  ${Title} {
+    text-align: left;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+`
+
 const SpecificItem = styled.div`
+  grid-area: 2 / 1 / 3 / 2;
   display: flex;
 `
 const Image = styled.div`
@@ -119,10 +132,13 @@ const InfoDescription = styled.p`
   line-height: 150%;
 `
 const Specific = styled.div`
-  margin: 60px 0 0 30px;
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media ${Theme.media.tablet} {
+    gap: 10px;
+  }
 
 `
 const InfoLink = styled.a`
@@ -132,11 +148,16 @@ const InfoLink = styled.a`
   font-weight: 500;
   line-height: 150%; /* 24px */
 `
+
+const GoodImageWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: 1 / 2 / 3 / 3;
+`
+
 const GoodImage = styled.img`
-  position: absolute;
-  left: 50%;
-  top: 0;
-  height: 100%;
+  width: 100%;
 `
 
 

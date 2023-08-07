@@ -91,6 +91,10 @@ const Title = styled.h1 `
   font-weight: 700;
   line-height: 100%;
   text-transform: uppercase;
+  
+  @media ${Theme.media.tablet} {
+    font-size: 50px;
+  }
 `
 const Price = styled.div `
     margin: 45px 0 35px;

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {Icon} from "../icon/Icon";
+import {Theme} from "../../styles/Theme";
 
 export const Carousel = (props: {imgUrlArray: Array<string>}) => {
     return (
@@ -26,6 +27,9 @@ const StyledCarousel = styled.div `
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @media ${Theme.media.tablet} {
+    justify-content: space-around;
+  }
 `
 
 const Slider = styled.div`
@@ -33,24 +37,36 @@ const Slider = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 80%;
-
   height: 423px;
+  
+  @media ${Theme.media.tablet} {
+    height: 323px;
+  }
 `
 
 
 const Slide = styled.div`
   width: 323px;
-  height: 302px;
+  height: 323px;
   border-radius: 30px;
   border: 1px solid rgba(125, 117, 117, 0.30);
+  @media ${Theme.media.tablet} {
+    width: 223px;
+    height: 223px;
+  }
 
   &:nth-child(2) {
-    width: 453px;
+    width: 423px;
     height: 423px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+
+    @media ${Theme.media.tablet} {
+      width: 323px;
+      height: 323px;
+    }
   }
 
 `

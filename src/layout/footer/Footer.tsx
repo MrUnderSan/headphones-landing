@@ -57,6 +57,10 @@ const StyledFooter = styled.footer `
   ${Container} {
     margin: 0 auto;
   }
+  
+  @media ${Theme.media.tablet} {
+    padding: 30px 0;
+  }
 
 `
 

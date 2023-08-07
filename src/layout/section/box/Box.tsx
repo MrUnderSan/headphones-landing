@@ -1,28 +1,28 @@
 import React from 'react';
 import styled from "styled-components";
 import {Container} from "../../../components/Container";
-import {Wrapper} from "../../../components/wrapper/Wrapper";
 import {Title} from "../../../components/title/Title";
 import photo from "../../../assets/image/box.png";
 import liArrow from "../../../assets/image/li-arrow.svg"
+import {Theme} from "../../../styles/Theme";
 
 
 export const Box = () => {
     return (
         <StyledBox>
             <Container>
-                <Wrapper justify={"center"} wrap={"wrap"}>
+                <BoxWrapper>
                     <Image src={photo}/>
-                    <ColumnWrapper>
-                        <Title>Whatever you get in the box</Title>
+                    <Title>Whatever you get in the box</Title>
+
                         <Description>
                             <Item>5A Charger</Item>
                             <Item>Extra battery</Item>
                             <Item>Sophisticated bag</Item>
                             <Item>User manual guide</Item>
                         </Description>
-                    </ColumnWrapper>
-                </Wrapper>
+
+                </BoxWrapper>
             </Container>
 
         </StyledBox>
@@ -31,28 +31,52 @@ export const Box = () => {
 
 const StyledBox = styled.section `
   ${Title} {
+    margin-top: 70px;
     text-align: left;
+    grid-area: a;
+    @media ${Theme.media.tablet} {
+      margin-top: 0;
+      margin-bottom: 30px;
+      text-align: center;
+    }
   }
 `
-const Image = styled.img `
+const BoxWrapper = styled.div`
+  display: grid;
+  grid-template-columns: minmax(660px, 3fr) 2fr;
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 
+            "b a"
+            "b c";
   
+  @media ${Theme.media.tablet} {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, auto);
+    grid-template-areas: 
+            "a a"
+            "b c";
+  }
+    
 `
-const ColumnWrapper = styled.div`
-  max-width: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin: 70px 0 0 16px;
+
+const Image = styled.img `
+  grid-area: b;
+  width: 100%;
 `
+
 
 const Description = styled.ul `
   opacity: 0.7;
   list-style-image: url(${liArrow});
-  margin-left: 56px;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-top: 48px;
+  grid-area: c;
+  margin-left: 30px;
+
+  @media ${Theme.media.tablet} {
+    justify-content: center;
+  }
 `
 const Item = styled.li `
   font-size: 22px;

@@ -5,6 +5,7 @@ import {Title} from "../../../components/title/Title";
 import {Button} from "../../../components/button/Button";
 import subscribeBgRight from "../../../assets/image/subscribe-bg-right.svg";
 import subscribeBgLeft from "../../../assets/image/subscribe-bg-left.svg"
+import {Theme} from "../../../styles/Theme";
 
 export const Subscribe = () => {
     return (
@@ -33,6 +34,12 @@ const StyledSubscribe = styled.section `
   ${Container} {
     margin-bottom: 130px;
   }
+
+  @media ${Theme.media.tablet} {
+    ${Container} {
+      margin-bottom: 100px;
+    }
+  }
   
 `
 
@@ -42,6 +49,7 @@ const SubscribeContainer = styled.div`
   display: flex;
   justify-content: center;
   overflow: hidden;
+  z-index: 0;
 
   &::before {
     content: url(${subscribeBgLeft});
@@ -51,6 +59,7 @@ const SubscribeContainer = styled.div`
     top: 0;
     max-width: 196px;
     transform: scale(90%);
+    z-index: -1;
   }
 
   &::after {
@@ -61,6 +70,7 @@ const SubscribeContainer = styled.div`
     top: 0;
     right: 0;
     transform: scale(90%);
+    z-index: -1;
   }
 `
 
@@ -74,6 +84,10 @@ const SubscribeWrapper = styled.div`
   min-height: 292px;
   border-radius: 20px;
   background: #FFF4F4;
+  
+  @media ${Theme.media.tablet} {
+    max-width: 600px;
+  }
 
 `
 

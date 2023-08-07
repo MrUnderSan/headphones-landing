@@ -6,6 +6,7 @@ import {Carousel} from "../../../components/carousel/Carousel";
 import redHeadphones from "../../../assets/image/colour/red.png";
 import blueHeadphones from "../../../assets/image/colour/blue.png";
 import coralHeadphones from "../../../assets/image/colour/coral.png"
+import {Theme} from "../../../styles/Theme";
 
 const imgArr = [
     `${redHeadphones}`,
@@ -32,5 +33,10 @@ const  StyledColour = styled.section `
     width: 100%;
     display: inline-block;
     margin-bottom: 70px;
+
+    @media ${Theme.media.tablet} {
+      margin-bottom: 30px;
+    }
+    
   }
 `

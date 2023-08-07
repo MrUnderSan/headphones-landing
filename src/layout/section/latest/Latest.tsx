@@ -34,7 +34,7 @@ export const Latest = () => {
             <Container>
                 <Title>Our Latest Product</Title>
                 <Description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas facilisis nunc ipsum aliquam, ante.</Description>
-                <Wrapper justify={"space-between"}>
+                <Wrapper justify={"center"} wrap={"wrap"}>
                     <Card cards={cards}/>
                 </Wrapper>
             </Container>
@@ -47,6 +47,10 @@ const StyledLatest = styled.section `
   font-size: 16px;
   font-weight: 400;
   line-height: 150%;
+  
+  ${Wrapper} {
+    gap: 50px;
+  }
 `
 const Description = styled.p `
     margin: 25px 0 90px;

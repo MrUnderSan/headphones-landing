@@ -7,5 +7,10 @@ export const Theme = {
         bg: "#E86564",
         gold: "#FDAE38",
         gray: "#716969"
+    },
+
+    media: {
+        tablet: "screen and (max-width: 1139px)",
+        mobile: "screen and (max-width: 767px)"
     }
 }
