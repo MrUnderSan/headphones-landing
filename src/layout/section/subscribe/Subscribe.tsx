@@ -111,6 +111,7 @@ const Subtitle = styled.h4 `
 `
 
 const Form = styled.form`
+  width: 80%;
   position: relative;
   
   ${Button} {
@@ -128,6 +129,7 @@ const Form = styled.form`
 
 const Input = styled.input`
   max-width: 503px;
+  width: 100%;
   height: 61px;
   padding: 15px 30px;
   border-radius: 73px;
